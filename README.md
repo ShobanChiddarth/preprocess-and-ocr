@@ -10,5 +10,5 @@ Before:
 
 After:
 
-![after-so](./assets/after.jpg)
+![after-so](./assets/after.png)
 
