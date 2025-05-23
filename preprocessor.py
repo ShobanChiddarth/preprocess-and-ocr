@@ -3,6 +3,7 @@ import imutils
 import cv2
 
 def process_small_image_with_unclear_background(path):
+    """Only works with `assets/before.png`"""
     # load the input image and convert it to grayscale
     image = cv2.imread(path)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
