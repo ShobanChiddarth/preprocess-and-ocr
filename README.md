@@ -1,4 +1,4 @@
-# preprocess-and-ocr
+# preprocess-for-ocr
 
 Python script to preprocess an image for OCR so that it looks clear.
 
