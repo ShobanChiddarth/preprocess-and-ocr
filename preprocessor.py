@@ -62,3 +62,18 @@ def process_small_image_with_unclear_background(path):
         return encoded_bytes.tobytes()
     else:
         return b''
+
+
+def make_document_sharper(image_path):
+    # Load image in grayscale (don't touch color if unnecessary)
+    gray = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+
+    # Light sharpening only (no resizing, no denoise, no thresholding)
+    kernel = np.array([[0, -1, 0],
+                       [-1, 5, -1],
+                       [0, -1, 0]])
+    sharpened = cv2.filter2D(gray, -1, kernel)
+
+    # Encode to PNG bytes
+    success, encoded_bytes = cv2.imencode(".png", sharpened)
+    return encoded_bytes.tobytes() if success else b''
